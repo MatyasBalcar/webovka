@@ -1,11 +1,22 @@
 p style="color: green" = notice
 
 h1 Races
+table class="table table-bordered"
+  thead
+    tr
+      th Race number
+      th Race time
+      th Winner
+      th Weather
+  tbody
 
-#races
+
   - @races.each do |race|
-    == render race
-    p
-      = link_to "Show this race", race
+    tr
+      td =race.race_number
+      td =race.time.to_s + " minutes"
+      td =race.driver
+      td =race.weather
+      td =link_to "Show race", race
 
-= link_to "New race", new_race_path
+
