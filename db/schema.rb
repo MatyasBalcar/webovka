@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_24_083326) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_24_093722) do
   create_table "races", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -19,6 +19,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_24_083326) do
     t.integer "race_number"
     t.string "weather"
     t.string "name"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.string "email"
+    t.integer "number_of_drivers"
+    t.date "date_for_reservation"
+    t.boolean "day_session"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "track"
   end
 
   create_table "users", force: :cascade do |t|

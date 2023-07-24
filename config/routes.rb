@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reservations
   resources :races
   get 'home/index'
   get 'users' ,to: 'users#index'

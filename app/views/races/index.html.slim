@@ -9,6 +9,7 @@ table class="table table-bordered"
       th Race time
       th Winner
       th Weather
+      th Action
   tbody
 
 
@@ -18,7 +19,19 @@ table class="table table-bordered"
       td =race.race_number
       td =race.time.to_s + " minutes"
       td =race.driver
-      td =race.weather
-      td =link_to "Show race", race
+      td
+        -if race.weather == 'dry'
+          b
+            div style="color:black"
+              =race.weather
+        -else
+          b
+            div style="color:blue"
+              =race.weather
+      td
+        -if admin?
+          =link_to "Edit", race
+        -else
+          b = 'Sign into and admin account to edit a race'
 
 
