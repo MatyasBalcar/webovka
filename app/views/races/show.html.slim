@@ -4,8 +4,8 @@ p style="color: green" = notice
 
 div
 
-  => link_to "Edit this race", edit_race_path(@race)
+  => link_to "Edit this race", edit_race_path(@race), class:"btn btn-outline-warning"
   '|
-  =< link_to "Back to races", races_path
+  =< link_to "Back to races", races_path, class:"btn btn-outline-info"
 
   = button_to "Destroy this race", @race,class:"btn btn-danger", method: :delete
