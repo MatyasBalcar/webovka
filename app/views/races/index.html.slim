@@ -4,6 +4,7 @@ h1 Races
 table class="table table-bordered"
   thead
     tr
+      th Name
       th Race number
       th Race time
       th Winner
@@ -13,6 +14,7 @@ table class="table table-bordered"
 
   - @races.each do |race|
     tr
+      td =race.name
       td =race.race_number
       td =race.time.to_s + " minutes"
       td =race.driver
