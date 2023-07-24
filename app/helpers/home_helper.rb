@@ -1,3 +1,5 @@
 module HomeHelper
-
+  def admin?
+    current_user&.admin
+  end
 end
