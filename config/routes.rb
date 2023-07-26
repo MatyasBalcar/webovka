@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'racers_page/index'
   resources :reservations
   resources :races
   get 'home/index'
